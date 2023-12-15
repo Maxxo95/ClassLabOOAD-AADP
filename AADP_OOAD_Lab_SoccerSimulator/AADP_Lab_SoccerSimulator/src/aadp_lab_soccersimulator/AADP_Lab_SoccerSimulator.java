@@ -41,7 +41,7 @@ public class AADP_Lab_SoccerSimulator {
         String DB_URL = "jdbc:mysql://localhost/" + dbName;
         String USER = "football";
         String PASS = "Java is almost as good as football";
-        Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+      /*  Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
          try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/", USER, PASS);
             Statement stmt = conn.createStatement();
@@ -60,7 +60,7 @@ public class AADP_Lab_SoccerSimulator {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }
+        }*/
         int option;
         boolean exit = false;
         Scanner sc = new Scanner(System.in);
