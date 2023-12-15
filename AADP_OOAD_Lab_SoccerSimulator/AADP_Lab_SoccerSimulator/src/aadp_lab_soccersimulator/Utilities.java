@@ -17,6 +17,8 @@ import java.util.Scanner;
  */
 public class Utilities {
      boolean validTeam = false;
+String[] teams = {"Ireland", "Brazil", "Argentina", "Japan", "Mexico", "Senegal", "Tunisia", "Qatar"};
+Team currentTeam = new Team("");
          Scanner sc = new Scanner(System.in);
                     String name;
                     int number = 0;
@@ -72,5 +74,27 @@ public class Utilities {
                     System.out.println("Thank you for entering a player"); 
                   
                     return playerToAdd;
+           }
+           public Team checkTeams(){
+                 String teamName;
+               do {
+                        System.out.println("For which team would you like to enter data?");
+                        teamName = sc.nextLine();
+                        for (String team : teams) {
+                            if (teamName.toLowerCase().equals(team.toLowerCase())) {
+                                validTeam = true;
+                                currentTeam = new Team(teamName);
+                                System.out.println(currentTeam.getTeamName());
+                                break;
+                            }
+                        }
+                        if (teamName.toLowerCase().equals("exit")) {
+                            break;
+                        }
+                        if (!validTeam) {
+                            System.out.println("That is not one of the teams. Please try again!");
+                        }
+                    } while (!validTeam);
+               return currentTeam;
            }
 }
